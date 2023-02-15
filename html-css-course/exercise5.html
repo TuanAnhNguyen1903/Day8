@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIKI clone</title>
+  <link rel="stylesheet" href="top_bar.css">
+  <link rel="stylesheet" href="overall.css">
+  <link rel="stylesheet" href="side_bar.css">
+  <style>
+    .div-content-1 {
+      display: flex;
+      flex-direction: column;
+      padding-top: 14px;
+      margin-top: 20px;
+      background-color: white;
+      border-radius: 8px;
+      padding-bottom: 10px;
+
+    }
+
+    .title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding-right: 10px;
+      padding-left: 30px;
+      padding-bottom: 10px;
+    }
+
+
+    .img-advert {
+      width: 40%;
+    }
+
+    .title-bar-advert-1 {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .title-bar-advert-2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      padding-right: 12px;
+    }
+
+    .title-bar-advert-2-1 {
+      font-display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .title-bar-advert-2-1-time {
+      display: flex;
+    }
+
+    .div-time {
+      background-color: red;
+      width: 21px;
+      height: 20px;
+      align-items: center;
+      padding-left: 3px;
+      padding-top: 3px;
+      border-radius: 5px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .cart {
+      display: flex;
+      justify-content: space-evenly;
+
+    }
+
+
+    .photo-cart-1 {
+      width: 144.5px;
+      border-radius: 8px;
+
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+
+
+
+
+    .body-page {
+
+      display: flex;
+      padding: 20px 93px;
+      margin: 0px;
+      justify-content: space-between;
+
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .div-content-3 {
+      display: flex;
+      margin-top: 20px;
+      justify-content: space-between;
+
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      border-radius: 4px;
+
+    }
+
+    .img-just {
+      /* width: 156.33px;
+    height: 156.33px; */
+    }
+
+    .label-items {
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      padding-bottom: 18px;
+    }
+
+    .infor-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+    }
+
+    .saled {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(128, 128, 137);
+      font-size: 12px;
+    }
+
+    .price-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 4px;
+
+
+    }
+
+
+
+    .pay-option {
+      display: flex;
+      padding-top: 4px;
+
+    }
+
+    .pay-option button {
+      color: rgb(10, 104, 255);
+      background-color: white;
+      border: 0.5px solid rgb(10, 104, 255);
+      font-size: 10px;
+      border-radius: 2px;
+      margin-right: 3px;
+
+
+
+    }
+
+
+    .bottom-bar-items {
+      display: flex;
+      padding-left: 12px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 8px;
+    }
+
+    .img-now {
+      width: 32px;
+      height: 16px;
+      padding-right: 3px;
+    }
+
+    .infor-part {
+      padding: 8px 12px;
+      border-bottom: 0.5px solid rgb(208, 208, 215);
+    }
+
+    .price-item-number {
+      font-size: 16px;
+      font-weight: 500;
+      color: rgb(255, 66, 78);
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .price-discount {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgb(255, 66, 78);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .discount-infor {
+      color: rgb(128, 128, 137);
+      font-size: 10px;
+      font-weight: 500;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .button-bottom {
+      padding:8px 12px ;
+      font-size: 16px;
+      color: rgb(10, 104, 255);
+      border: 0.5px solid rgb(10, 104, 255);width: 240px;
+      background-color:rgb(213, 212, 212) ;
+      border-radius: 4px;
+      margin: auto;
+      margin-top: 20px;
+     
+    }
+  </style>
+</head>
+
+<body class="overall">
+  <div>
+    <div class="top-bar">
+      <div class="top-bar-1">
+        <div style="flex:2 ;"><img
+            src="https://salt.tikicdn.com/ts/upload/e4/49/6c/270be9859abd5f5ec5071da65fab0a94.png" class="logo-web">
+        </div>
+        <div class="text-field">
+          <div style="padding-right:10px;"><img
+              src="https://salt.tikicdn.com/ts/upload/33/d0/37/6fef2e788f00a16dc7d5a1dfc5d0e97a.png"
+              class="icon-search">
+          </div>
+          <div class="input-text-field"><input type="text" placeholder="Bạn tìm gì hôm nay?"></div>
+          <div><button class="button-text-field">Tìm kiếm</button></div>
+        </div>
+        <div class="menu-bar">
+          <div class="icon-home-menu">
+            <img src="https://salt.tikicdn.com/ts/upload/b4/90/74/6baaecfa664314469ab50758e5ee46ca.png"
+              class="icon-home">
+            <a ref="nofollow"> Trang chủ</a>
+          </div>
+          <div class="icon-home-menu"> <img
+              src="https://salt.tikicdn.com/ts/upload/41/28/7d/4713aa0d2855c5c770799f248692f0c5.png" class="icon-home">
+            <a ref="nofollow"> Astra</a>
+          </div>
+          <div class="icon-home-menu">
+            <img src="https://salt.tikicdn.com/ts/upload/07/d5/94/d7b6a3bd7d57d37ef6e437aa0de4821b.png"
+              class="icon-home">
+            <a ref="nofollow">Tài khoản</a>
+          </div>
+        </div>
+        <div style="display:flex; align-items: center; flex: 1">
+          <p style="font-size: 24px; color: rgb(159, 159, 159);">|</p>
+          <div style="padding-left: 17px; position: relative; ;"><img
+              src="https://salt.tikicdn.com/ts/upload/51/e2/92/8ca7e2cc5ede8c09e34d1beb50267f4f.png" class="icon-home">
+            <div class="number_cart">
+              0</div>
+          </div>
+        </div>
+      </div>
+      <div class="top-bar-2">
+        <div style="display: flex; flex: 1; "> <a class="top-bar-2-a"> trái cây</a><a class="top-bar-2-a">thịt,
+            trứng</a><a class="top-bar-2-a">rau củ
+            quả</a><a class="top-bar-2-a"> sữa, bơ, phô mai</a><a class="top-bar-2-a">hải sản</a><a class="top-bar-2-a">
+            gạo, mì ăn
+            liền</a><a class="top-bar-2-a"> đồ uống, bia, rượu</a><a class="top-bar-2-a">bánh kẹo</a></div>
+        <div style="display: flex; justify-content:flex-end;  ">
+          <img src="https://salt.tikicdn.com/ts/upload/88/5c/9d/f5ee506836792eb7775e527ef8350a44.png"
+            style="width: 20px; height: 20px; padding-right: 5px;">
+          <h4 style="margin: 0px;
+    
+          color: rgb(128, 128, 137);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 150%;
+          padding-right: 4px;
+          
+      ">Giao đến:</h4>
+          <p style=" text-decoration: underline;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: rgb(39, 39, 42);">
+            Q. Hoàn Kiếm, P. Hàng Trống, Hà Nội
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="body-page">
+      <div>
+        <div class="side-bar">
+          <div style="margin-bottom: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-left: 16px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 150%;
+        color: rgb(39, 39, 42);">Nổi bật</div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/97/6d/10/cff26113899192933f70a608c84c11b1.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Siêu Sale ValenTiki</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/3c/ce/96/db8c083610e45b78d8f7662f0013faa8.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Giá Tốt Mỗi Ngày</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/20/68/cf/6d4adbdbcd1c35b0a438a655d9a420d0.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Mã giảm giá</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/4d/a3/cb/c86b6e4f17138195c026437458029d67.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Đóng tiền, nạp thẻ</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/tmp/6f/4e/41/93f72f323d5b42207ab851dfa39d44fb.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar"> Mua trước, trả sau</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/1e/27/a7/e2c0e40b6dc45a3b5b0a8e59e2536f23.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar"> Ưu đãi thẻ, ví</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/6f/d0/68/76b6c01998c3f45f70b843c390097690.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Bảo hiểm Tiki360</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/44/58/fc/804a2dfd610e9075ad5a8f0d13f2b21a.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Tiki Exchange</div>
+          </div>
+        </div>
+        <div class="side-bar">
+          <div style="margin-bottom: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-left: 16px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 150%;
+        color: rgb(39, 39, 42);">Nổi bật</div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/97/6d/10/cff26113899192933f70a608c84c11b1.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Siêu Sale ValenTiki</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/3c/ce/96/db8c083610e45b78d8f7662f0013faa8.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Giá Tốt Mỗi Ngày</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/20/68/cf/6d4adbdbcd1c35b0a438a655d9a420d0.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Mã giảm giá</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/4d/a3/cb/c86b6e4f17138195c026437458029d67.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Đóng tiền, nạp thẻ</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/tmp/6f/4e/41/93f72f323d5b42207ab851dfa39d44fb.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar"> Mua trước, trả sau</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/1e/27/a7/e2c0e40b6dc45a3b5b0a8e59e2536f23.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar"> Ưu đãi thẻ, ví</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/6f/d0/68/76b6c01998c3f45f70b843c390097690.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Bảo hiểm Tiki360</div>
+          </div>
+          <div class="div-side-bar">
+            <div><img
+                src="https://salt.tikicdn.com/cache/100x100/ts/upload/44/58/fc/804a2dfd610e9075ad5a8f0d13f2b21a.png.webp"
+                alt="" class="icon-side-bar"></div>
+            <div class="title-icon-side-bar">Tiki Exchange</div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="content">
+        <div style=" display: flex">
+          <div style="padding-right:15px ;"> <img
+              src="https://salt.tikicdn.com/cache/w1080/ts/tikimsp/94/09/41/ba9fac2bc08f8dc73d072bec97b37aee.png.webp"
+              style="height:240px; border-radius: 8px;"> </div>
+          <div> <img
+              src="https://salt.tikicdn.com/cache/w750/ts/tikimsp/b6/3f/7c/30da201a5eb1fb37f4ea241b8d20859d.png.webp"
+              style="width:240px; height: 240px; border-radius: 8px;"></div>
+        </div>
+        <div class="div-content-1">
+          <div class="title-bar-advert-1">
+            <div class="title">Thương Hiệu Chính Hãng</div>
+            <div><img src="https://salt.tikicdn.com/ts/tka/71/61/5d/dee57a81920f1f4e4dcc3b5878d9bfed.png"
+                style="width: 70px; height:16px"></div>
+          </div>
+          <div class="cart">
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/88/a6/7d/11f0abec0dccd4d94a5e191f5990738e.png"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/02/20/41/842d39bd4de9c895e3dcd3a50076d103.png"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/f0/a6/6a/6c3f6609e92622185121c54af7a5bdb2.jpg"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/29/36/5c/423e5a5bea1497c8e6fd2e8e7cd47a0e.png"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/b5/d3/4c/68fb25052b6a1819fbb78183c0297565.jpg"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/e1/15/82/138e7b7f59c9e3fb2346780021a9245a.jpeg"
+                class="photo-cart-1"></div>
+          </div>
+        </div>
+        <div class="div-content-1">
+          <div class="title-bar-advert-2">
+            <div style="display: flex;">
+              <div class="title">Giá sốc hôm nay</div>
+              <div class="title-bar-advert-2-1-time">
+                <div class="div-time">00</div>
+                <p>:</p>
+                <div class="div-time">00</div>
+                <p>:</p>
+                <div class="div-time">01</div>
+              </div>
+            </div>
+
+            <div style="display:flex; align-items: center;">
+              <div style="font-family: Arial, Helvetica, sans-serif ; color: rgb(0, 139, 225); font-size: 15px;">
+                Xem thêm
+              </div>
+              <div><img src="https://salt.tikicdn.com/ts/upload/d8/38/d3/4bef23fec35f9fbfa1757d30184ddb9c.png"
+                  style="width: 24px; height: 24px"></div>
+            </div>
+
+          </div>
+          <div class="cart">
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/88/a6/7d/11f0abec0dccd4d94a5e191f5990738e.png"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/02/20/41/842d39bd4de9c895e3dcd3a50076d103.png"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/f0/a6/6a/6c3f6609e92622185121c54af7a5bdb2.jpg"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/29/36/5c/423e5a5bea1497c8e6fd2e8e7cd47a0e.png"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/b5/d3/4c/68fb25052b6a1819fbb78183c0297565.jpg"
+                class="photo-cart-1"></div>
+            <div class="div-img"><img
+                src="https://salt.tikicdn.com/ts/tikimsp/e1/15/82/138e7b7f59c9e3fb2346780021a9245a.jpeg"
+                class="photo-cart-1"></div>
+          </div>
+        </div>
+        <div class="div-content-3">
+        
+          <div class="item">
+            <div style="position: relative;">
+              <img
+                src="https://salt.tikicdn.com/cache/280x280/ts/product/a2/38/6c/ce008c63f4ac771550439da44f5f8ee8.png.webp"
+                style="width: 156.33px;  border-top-left-radius: 4px; border-top-right-radius: 4px;">
+              <div style="position:absolute; top: -0.5px;left: 0;">
+                <img src="https://salt.tikicdn.com/ts/upload/5d/4c/f7/0261315e75127c2ff73efd7a1f1ffdf2.png"
+                  style="width: 68px;  border-top-left-radius: 4px;">
+              </div>
+            </div>
+            <div class="infor-part">
+              <div class="label-items">Apple Iphone 13</div>
+              <div class="infor-items">
+                <div
+                  style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color: rgb(128, 128, 137); display: flex ;">
+                  4.95
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14"
+                    color="#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"
+                    style="color: rgb(253, 216, 54);">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                  </svg>
+                </div>
+                <!-- <div class="img-star"></div> -->
+                <div style="color: rgb(193, 193, 202) ;">|</div>
+                <div class="saled">Đã bán 1000+</div>
+              </div>
+              <div class="price-items">
+                <div class="price-item-number">17.990.000₫</div>
+                <div class="price-discount">-0.28%</div>
+              </div>
+              <div class="discount-infor">Tặng tới 1000 ASA (228k ₫) <br> ≈ 1.3% hoàn tiền </div>
+              <div class="pay-option">
+                <button>Freeship+</button>
+                <button>Trả góp</button>
+              </div>
+            </div>
+            <div class="bottom-bar-items">
+              <div><img src="https://salt.tikicdn.com/ts/upload/9e/13/50/6d16b5e1d219857bd23572ce049e59e2.png"
+                  class="img-now" alt=""></div>
+              <div style=" color: rgb(128, 128, 137);
+              font-size: 12px;
+              font-weight: 500;
+              font-family: Arial, Helvetica, sans-serif;
+              padding-top: 2px;
+            ">Giao sáng mai</div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div style="position: relative;">
+              <img
+                src="https://salt.tikicdn.com/cache/280x280/ts/product/a2/38/6c/ce008c63f4ac771550439da44f5f8ee8.png.webp"
+                style="width: 156.33px;  border-top-left-radius: 4px; border-top-right-radius: 4px;">
+              <div style="position:absolute; top: -0.5px;left: 0;">
+                <img src="https://salt.tikicdn.com/ts/upload/5d/4c/f7/0261315e75127c2ff73efd7a1f1ffdf2.png"
+                  style="width: 68px;  border-top-left-radius: 4px;">
+              </div>
+            </div>
+            <div class="infor-part">
+              <div class="label-items">Apple Iphone 13</div>
+              <div class="infor-items">
+                <div
+                  style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color: rgb(128, 128, 137); display: flex ;">
+                  4.95
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14"
+                    color="#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"
+                    style="color: rgb(253, 216, 54);">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                  </svg>
+                </div>
+                <!-- <div class="img-star"></div> -->
+                <div style="color: rgb(193, 193, 202) ;">|</div>
+                <div class="saled">Đã bán 1000+</div>
+              </div>
+              <div class="price-items">
+                <div class="price-item-number">17.990.000₫</div>
+                <div class="price-discount">-0.28%</div>
+              </div>
+              <div class="discount-infor">Tặng tới 1000 ASA (228k ₫) <br> ≈ 1.3% hoàn tiền </div>
+              <div class="pay-option">
+                <button>Freeship+</button>
+                <button>Trả góp</button>
+              </div>
+            </div>
+            <div class="bottom-bar-items">
+              <div><img src="https://salt.tikicdn.com/ts/upload/9e/13/50/6d16b5e1d219857bd23572ce049e59e2.png"
+                  class="img-now" alt=""></div>
+              <div style=" color: rgb(128, 128, 137);
+              font-size: 12px;
+              font-weight: 500;
+              font-family: Arial, Helvetica, sans-serif;
+              padding-top: 2px;
+            ">Giao sáng mai</div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div style="position: relative;">
+              <img
+                src="https://salt.tikicdn.com/cache/280x280/ts/product/a2/38/6c/ce008c63f4ac771550439da44f5f8ee8.png.webp"
+                style="width: 156.33px;  border-top-left-radius: 4px; border-top-right-radius: 4px;">
+              <div style="position:absolute; top: -0.5px;left: 0;">
+                <img src="https://salt.tikicdn.com/ts/upload/5d/4c/f7/0261315e75127c2ff73efd7a1f1ffdf2.png"
+                  style="width: 68px;  border-top-left-radius: 4px;">
+              </div>
+            </div>
+            <div class="infor-part">
+              <div class="label-items">Apple Iphone 13</div>
+              <div class="infor-items">
+                <div
+                  style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color: rgb(128, 128, 137); display: flex ;">
+                  4.95
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14"
+                    color="#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"
+                    style="color: rgb(253, 216, 54);">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                  </svg>
+                </div>
+                <!-- <div class="img-star"></div> -->
+                <div style="color: rgb(193, 193, 202) ;">|</div>
+                <div class="saled">Đã bán 1000+</div>
+              </div>
+              <div class="price-items">
+                <div class="price-item-number">17.990.000₫</div>
+                <div class="price-discount">-0.28%</div>
+              </div>
+              <div class="discount-infor">Tặng tới 1000 ASA (228k ₫) <br> ≈ 1.3% hoàn tiền </div>
+              <div class="pay-option">
+                <button>Freeship+</button>
+                <button>Trả góp</button>
+              </div>
+            </div>
+            <div class="bottom-bar-items">
+              <div><img src="https://salt.tikicdn.com/ts/upload/9e/13/50/6d16b5e1d219857bd23572ce049e59e2.png"
+                  class="img-now" alt=""></div>
+              <div style=" color: rgb(128, 128, 137);
+              font-size: 12px;
+              font-weight: 500;
+              font-family: Arial, Helvetica, sans-serif;
+              padding-top: 2px;
+            ">Giao sáng mai</div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div style="position: relative;">
+              <img
+                src="https://salt.tikicdn.com/cache/280x280/ts/product/a2/38/6c/ce008c63f4ac771550439da44f5f8ee8.png.webp"
+                style="width: 156.33px;  border-top-left-radius: 4px; border-top-right-radius: 4px;">
+              <div style="position:absolute; top: -0.5px;left: 0;">
+                <img src="https://salt.tikicdn.com/ts/upload/5d/4c/f7/0261315e75127c2ff73efd7a1f1ffdf2.png"
+                  style="width: 68px;  border-top-left-radius: 4px;">
+              </div>
+            </div>
+            <div class="infor-part">
+              <div class="label-items">Apple Iphone 13</div>
+              <div class="infor-items">
+                <div
+                  style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color: rgb(128, 128, 137); display: flex ;">
+                  4.95
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14"
+                    color="#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"
+                    style="color: rgb(253, 216, 54);">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                  </svg>
+                </div>
+                <!-- <div class="img-star"></div> -->
+                <div style="color: rgb(193, 193, 202) ;">|</div>
+                <div class="saled">Đã bán 1000+</div>
+              </div>
+              <div class="price-items">
+                <div class="price-item-number">17.990.000₫</div>
+                <div class="price-discount">-0.28%</div>
+              </div>
+              <div class="discount-infor">Tặng tới 1000 ASA (228k ₫) <br> ≈ 1.3% hoàn tiền </div>
+              <div class="pay-option">
+                <button>Freeship+</button>
+                <button>Trả góp</button>
+              </div>
+            </div>
+            <div class="bottom-bar-items">
+              <div><img src="https://salt.tikicdn.com/ts/upload/9e/13/50/6d16b5e1d219857bd23572ce049e59e2.png"
+                  class="img-now" alt=""></div>
+              <div style=" color: rgb(128, 128, 137);
+              font-size: 12px;
+              font-weight: 500;
+              font-family: Arial, Helvetica, sans-serif;
+              padding-top: 2px;
+            ">Giao sáng mai</div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div style="position: relative;">
+              <img
+                src="https://salt.tikicdn.com/cache/280x280/ts/product/a2/38/6c/ce008c63f4ac771550439da44f5f8ee8.png.webp"
+                style="width: 156.33px;  border-top-left-radius: 4px; border-top-right-radius: 4px;">
+              <div style="position:absolute; top: -0.5px;left: 0;">
+                <img src="https://salt.tikicdn.com/ts/upload/5d/4c/f7/0261315e75127c2ff73efd7a1f1ffdf2.png"
+                  style="width: 68px;  border-top-left-radius: 4px;">
+              </div>
+            </div>
+            <div class="infor-part">
+              <div class="label-items">Apple Iphone 13</div>
+              <div class="infor-items">
+                <div
+                  style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color: rgb(128, 128, 137); display: flex ;">
+                  4.95
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14"
+                    color="#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"
+                    style="color: rgb(253, 216, 54);">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                  </svg>
+                </div>
+                <!-- <div class="img-star"></div> -->
+                <div style="color: rgb(193, 193, 202) ;">|</div>
+                <div class="saled">Đã bán 1000+</div>
+              </div>
+              <div class="price-items">
+                <div class="price-item-number">17.990.000₫</div>
+                <div class="price-discount">-0.28%</div>
+              </div>
+              <div class="discount-infor">Tặng tới 1000 ASA (228k ₫) <br> ≈ 1.3% hoàn tiền </div>
+              <div class="pay-option">
+                <button>Freeship+</button>
+                <button>Trả góp</button>
+              </div>
+            </div>
+            <div class="bottom-bar-items">
+              <div><img src="https://salt.tikicdn.com/ts/upload/9e/13/50/6d16b5e1d219857bd23572ce049e59e2.png"
+                  class="img-now" alt=""></div>
+              <div style=" color: rgb(128, 128, 137);
+              font-size: 12px;
+              font-weight: 500;
+              font-family: Arial, Helvetica, sans-serif;
+              padding-top: 2px;
+            ">Giao sáng mai</div>
+            </div>
+
+          </div>
+          <div class="item">
+            <div style="position: relative;">
+              <img
+                src="https://salt.tikicdn.com/cache/280x280/ts/product/a2/38/6c/ce008c63f4ac771550439da44f5f8ee8.png.webp"
+                style="width: 156.33px;  border-top-left-radius: 4px; border-top-right-radius: 4px;">
+              <div style="position:absolute; top: -0.5px;left: 0;">
+                <img src="https://salt.tikicdn.com/ts/upload/5d/4c/f7/0261315e75127c2ff73efd7a1f1ffdf2.png"
+                  style="width: 68px;  border-top-left-radius: 4px;">
+              </div>
+            </div>
+            <div class="infor-part">
+              <div class="label-items">Apple Iphone 13</div>
+              <div class="infor-items">
+                <div
+                  style="font-family:Arial, Helvetica, sans-serif; font-size:12px; color: rgb(128, 128, 137); display: flex ;">
+                  4.95
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" size="14"
+                    color="#fdd836" height="14" width="14" xmlns="http://www.w3.org/2000/svg"
+                    style="color: rgb(253, 216, 54);">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                    </path>
+                  </svg>
+                </div>
+                <!-- <div class="img-star"></div> -->
+                <div style="color: rgb(193, 193, 202) ;">|</div>
+                <div class="saled">Đã bán 1000+</div>
+              </div>
+              <div class="price-items">
+                <div class="price-item-number">17.990.000₫</div>
+                <div class="price-discount">-0.28%</div>
+              </div>
+              <div class="discount-infor">Tặng tới 1000 ASA (228k ₫) <br> ≈ 1.3% hoàn tiền </div>
+              <div class="pay-option">
+                <button>Freeship+</button>
+                <button>Trả góp</button>
+              </div>
+            </div>
+            <div class="bottom-bar-items">
+              <div><img src="https://salt.tikicdn.com/ts/upload/9e/13/50/6d16b5e1d219857bd23572ce049e59e2.png"
+                  class="img-now" alt=""></div>
+              <div style=" color: rgb(128, 128, 137);
+              font-size: 12px;
+              font-weight: 500;
+              font-family: Arial, Helvetica, sans-serif;
+              padding-top: 2px;
+            ">Giao sáng mai</div>
+            </div>
+
+          </div>
+          
+        </div>
+        <button class="button-bottom">Xem Thêm</button>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div>
+
+  </div>
+
+
+
+</body>
+
+</html>
